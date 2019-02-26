@@ -20,6 +20,7 @@ class UserInput extends Component {
   }
 
   render() {
+    console.log("render",this.props)
     return(
       <form onSubmit={this.handleOnSubmit}>
         <p>
@@ -43,5 +44,7 @@ class UserInput extends Component {
     )
   }
 }
+
+
 
 export default connect()(UserInput);
