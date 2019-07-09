@@ -6,15 +6,16 @@ class Users extends Component {
   //BUGS: surround console.log with console.group (google or see syntax below)
   //BUGS: debugger
   render() {
-    console.group(`Inside the user component`)
-      console.log('username', this.props.user.username);
-      console.log('hometown', this.props.user.hometown);
-    console.groupEnd()
+    // console.group(`Inside the user component`)
+    //   console.log('username', this.props.user.username);
+    //   console.log('hometown', this.props.user.hometown);
+    // console.groupEnd()
 
     let users = this.props.users.map((user, index) => <li key={index}>{user.username}</li>)
     debugger
     return (
       <div>
+        {this.state.users.length}
         <ul>
           {users}
         </ul>
