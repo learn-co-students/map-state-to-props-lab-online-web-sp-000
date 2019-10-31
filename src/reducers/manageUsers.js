@@ -13,3 +13,5 @@ export default function manageUsers(state = {
       return state;
   }
 };
+// u action.useru je NOVI KREIRANI user iz FORMa
+//  UserInput.js ->   <form onSubmit={this.handleOnSubmit}>
