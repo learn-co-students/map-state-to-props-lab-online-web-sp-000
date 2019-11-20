@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
-
+import {createStore} from 'redux'
 import manageUsers from './reducers/manageUsers'
+import { Provider } from 'react-redux'
 
 
-// add imports and code
 
-
+const myStore = createStore(manageUsers)
 ReactDOM.render(
-  // add imports and code
-  <App />
-  // add imports and code
+  <Provider store = {myStore}>
+    <App />
+  </Provider>
   ,
   document.getElementById('root')
 );
