@@ -8,7 +8,7 @@ class Users extends Component {
       <div>
         <ul>
           Users!
-          {/* {this.props.users.username} */}
+          {/* Write code here that displays the usernames of all users in the Redux store */}
           {this.props.users.length}
         </ul>
       </div>
