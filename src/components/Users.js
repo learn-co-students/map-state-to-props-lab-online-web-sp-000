@@ -8,7 +8,7 @@ class Users extends Component {
       <div>
         <ul>
           Users!
-          {this.props.users.username}
+          {/* {this.props.users.username} */}
           {this.props.users.length}
         </ul>
       </div>
