@@ -14,7 +14,7 @@ class Users extends Component {
           {/* In addition, display the total number of users curently in the store */}
           {users}
         </ul>
-        {this.props.numOfUsers}
+        {this.props.userCount}
       </div>
     )
   }
@@ -24,7 +24,7 @@ class Users extends Component {
 const mapStatetoUsers = state => {
   return {
     users: state.users,
-    numOfUsers: state.users.length
+    userCount: state.users.length
   };
 };
 
