@@ -10,9 +10,10 @@ class Users extends Component {
     return (
       <div>
         <ul>
-          Users!
+          Users:
           {users}
-          {this.props.numberOfUsers}
+          <br></br>
+          Number of Users: {this.props.numberOfUsers}
         </ul>
       </div>
     )
