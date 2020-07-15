@@ -5,12 +5,21 @@ import manageUsers from '../reducers/manageUsers';
 class Users extends Component {
 
   render() {
+
+    let arrayOfUsers = this.props.users.map((user) => {
+     return user.username
+    })
+
+    let getUsersNames = arrayOfUsers.map((i) => {
+      return <li>{i}</li>  
+    })
+
     return (
       <div>
         <ul>
           Users!
-          {this.props.username}
-          {/* In addition, display the total number of users curently in the store */}
+          {getUsersNames}
+          {getUsersNames.length}
         </ul>
       </div>
     )
@@ -18,7 +27,7 @@ class Users extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { input : state.inputs}
+  return { users : state.users}
 }
 
 
