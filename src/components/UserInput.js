@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 class UserInput extends Component {
 
-  state = {
+  state = { // local state 
     username: '',
     hometown: ''
   }
@@ -45,3 +45,4 @@ class UserInput extends Component {
 }
 
 export default connect()(UserInput);
+// its connect to entire store where application state (container)
