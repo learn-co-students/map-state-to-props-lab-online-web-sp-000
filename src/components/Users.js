@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux'
 // add any needed imports here
-class Users extends Component {
-
+class Users extends PureComponent {
   render() {
     return (
       <div>
+        {this.props.usrNum}
         <ul>
-          Users!
-          {/* Write code here that displays the usernames of all users in the Redux store */}
-          {/* In addition, display the total number of users curently in the store */}
+          {this.props.usrs.map((usr, index) => <li>{usr.username}</li>)}
         </ul>
       </div>
     )
   }
 }
 
-//add mapStateToProps here
-
-// connect this component to Redux
-export default Users
+export default connect((state) => { return {usrs: state.users, usrNum: state.users.length} })(Users)
