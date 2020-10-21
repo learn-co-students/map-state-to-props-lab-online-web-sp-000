@@ -10,17 +10,20 @@ class Users extends Component {
     <li key={index}>
     {user.username}
     </li>);
+
     
     return (
       <div>
-        {this.props.numberOfUsers}
-        <ul>
-          {users}
-        </ul>
+          {this.props.mumberOfUsers}
+          <ul>
+            {users}   
+          </ul>
       </div>
     )
   }
 }
+
+//add mapStateToProps here
 
 const mapStateToProps = (state) => {
   return {
@@ -29,4 +32,14 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Users)
+// connect this component to Redux
+ 
+export default connect(mapStateToProps)(Users);
+
+
+
+
+
+
+
+
