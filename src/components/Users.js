@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
-// add any needed imports here
+import { connect } from 'react-redux';
+// import './App.css';
 class Users extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      users: []
+    }
+  }
 
   render() {
     return (
       <div>
         <ul>
-          Users!
-          {/* Write code here that displays the usernames of all users in the Redux store */}
+          {this.props.users.length}
+          {this.props.users.map(function(user, index) {
+            return <li key={index}>{user.username}</li>
+          })}
+          
           {/* In addition, display the total number of users curently in the store */}
         </ul>
       </div>
@@ -15,7 +26,8 @@ class Users extends Component {
   }
 }
 
-//add mapStateToProps here
+const mapToStateProps = (state) => {
+  return {users: state.users}
+}
 
-// connect this component to Redux
-export default Users
+export default connect(mapToStateProps)(Users);
