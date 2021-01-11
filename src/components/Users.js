@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 class Users extends Component {
 
   render() {
-    debugger;
+    let users = this.props.users.map((user, index) => <li key={index}>{user.username}</li>);
     return (
       <div>
         <ul>
           Users!
-          {this.props.users.forEach(user => user.username)}
+          {users}
           {this.props.users.length}
         </ul>
       </div>
