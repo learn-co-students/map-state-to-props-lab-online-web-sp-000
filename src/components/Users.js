@@ -15,7 +15,7 @@ class Users extends Component {
             return <li>{user.username}</li>
           })}
           {/* In addition, display the total number of users curently in the store */}
-          {this.props.userCount}
+          {this.props.userCount > 0 ? <li>{this.props.userCount}</li> : ''}
         </ul>
       </div>
     )
