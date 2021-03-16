@@ -10,7 +10,7 @@ class Users extends Component {
           Users!
           {/* Write code here that displays the usernames of all users in the Redux store */}
           {this.props.users.map((user) => {
-            return <li key={user.id}>{user.username}</li>
+            return <li key={user.username}>{user.username}</li>
           })}
           {/* In addition, display the total number of users curently in the store */}
           {this.props.userCount > 0 ? this.props.userCount : ''}
