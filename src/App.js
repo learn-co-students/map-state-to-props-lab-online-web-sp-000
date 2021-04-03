@@ -1,3 +1,5 @@
+// App.js
+
 import React, { Component } from 'react';
 import UserInput from './components/UserInput'
 import ConnectedUsers from './components/Users'
