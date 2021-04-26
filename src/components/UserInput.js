@@ -44,4 +44,5 @@ class UserInput extends Component {
   }
 }
 
+//by default we pass dispatch() allowing us to make custom actions done in handleOnSubmit()
 export default connect()(UserInput);
