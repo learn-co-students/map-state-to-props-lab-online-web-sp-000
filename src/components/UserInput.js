@@ -1,47 +1,27 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-class UserInput extends Component {
-
-  state = {
-    username: '',
-    hometown: ''
-  }
-
-  handleInputChange = (event) => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
-
-  handleOnSubmit = (event) => {
-    event.preventDefault();
-    this.props.dispatch({type: 'ADD_USER', user: this.state})
-  }
+class Users extends Component {
 
   render() {
-    return(
-      <form onSubmit={this.handleOnSubmit}>
-        <p>
-          <input
-            type="text"
-            id="username"
-            onChange={this.handleInputChange}
-            placeholder="username"
-          />
-        </p>
-        <p>
-          <input
-            type="text"
-            id="hometown"
-            onChange={this.handleInputChange}
-            placeholder="hometown"
-          />
-        </p>
-        <input type="submit" />
-      </form>
+    let users = this.props.users.map((user, index) => <li key={index}>{user.username}</li>);
+
+    return (
+      <div>
+        {this.props.numberOfUsers}
+        <ul>
+          {users}
+        </ul>
+      </div>
     )
   }
 }
 
-export default connect()(UserInput);
+const mapStateToProps = (state) => {
+  return {
+    users: state.users,
+    numberOfUsers: state.users.length
+  };
+};
+
+export default connect(mapStateToProps)(Users)
