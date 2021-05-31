@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // add any needed imports here
 
-const mapStateToProps = (state) => {
-  return { users: state.users }
-} 
 class Users extends Component {
 
   render() {
@@ -13,11 +10,7 @@ class Users extends Component {
         <ul>
           Users!
           {this.props.users.map(user => {
-            return(
-              <div className="user_name_card" key={user.index}>
-                {user.username}
-              </div>
-            )
+            return(<li>{user.username}</li>)
           })}
           {this.props.users.length}
         </ul>
@@ -26,7 +19,8 @@ class Users extends Component {
   }
 }
 
-//add mapStateToProps here
+const mapStateToProps = (state) => {
+  return { users: state.users }
+} 
 
-// connect this component to Redux
 export default connect(mapStateToProps)(Users)
