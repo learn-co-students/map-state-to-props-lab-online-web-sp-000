@@ -44,4 +44,4 @@ class UserInput extends Component {
   }
 }
 
-export default connect()(UserInput);
+export default connect((state) => ({ username: state.username, hometown: state.hometown}) )(UserInput);
